@@ -1,0 +1,246 @@
+body{
+	background-color: #f1f6f3;
+	font: 100%/1.4 Halvatica;
+	color: #444;
+	font-size: 1rem;
+
+}
+.container {
+	font-family: Halvatica;
+	background-color: white;
+	padding: 0 1.76991%;
+	height: 100vh;
+	width: 1000px;
+	border-shadow:1px 1px 1px rgba(0, 0, 0, 0.9);
+
+}
+
+
+header {
+	padding: 20px 10px;
+}
+header img{
+	height:100px;
+}
+.register-section h2 {
+	padding-top: 20px;
+	margin-bottom: .5em;
+	font-size: 1.8em;
+	font-weight: bold;
+	display: block;
+	text-transform: uppercase;
+
+}
+
+
+
+
+
+
+.header-nav {
+	margin: 30px 0px;
+
+	display: flex;
+	justify-content: space-between;
+	height: 45px;
+	align-items: center;
+
+	list-style-type: none;
+	text-align: center;
+	padding-left: 0;
+	background-color: #f1f6f3;
+	border: 1px solid #ccc;
+	cursor: pointer;
+}
+.header-nav  li {
+	display: flex;
+	justify-content: center;
+	width:100%;
+	font-size: 1.1rem;
+	height: 100%;
+	align-items: center;
+
+	border-left: 1px solid #ccc;
+
+}
+.header-nav a {
+	color: #444444;
+	list-style-type: none;
+}
+.header-nav li:hover {
+	background: #cfe0d8;
+}
+.header-nav .active{
+	background-color: #2D473A;
+}
+.header-nav .active a {
+	color: white;
+}
+.header-nav .active:hover{
+	background-color: #2D473A;
+}
+.header-nav .active a:hover{
+	color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.auth-section {
+	padding: 60px 0px;
+	display: flex;
+	flex-direction: row;
+}
+.signup, .reg{
+
+	width: 50%;
+	height: 300px;
+	display: flex;
+	flex-direction: column;
+	padding: 25px 60px;
+}
+h3 {
+
+	font-weight: 600;
+	margin-bottom: 25px;
+}
+.reg  {
+	align-items: center;
+}
+.signup {
+	border-right: 1px solid #cccccc;
+}
+
+.form-group {
+	display: flex;
+	flex-direction: column;
+}
+input {
+	width: 100%;
+	padding: .1em .2em;
+	border: 1px solid #ccc;
+	background: #fdfcfc;
+	margin: 0;
+	color: #444;
+	font-size: 1em;
+	line-height: 1.8;
+	border-radius: 2px;
+	margin-bottom: 0;
+
+}
+
+label {
+	margin:0;
+}
+.btn{
+	font-weight: 500;
+	font-family: inherit;
+	cursor: pointer;
+	width: 90px;
+	font-family: inherit;
+	padding: .5em 1em;
+	background: #2D473A;
+	color: #fff;
+	border: 2px solid #2D473A;
+	letter-spacing: 1.3px;
+	border-radius: 0;
+}
+.btn:hover {
+	border: 2px solid #2D473A;
+	color: #000;
+	background-color: #fff;
+}
+.signup btn {
+	display: inline-block;;
+}
+.forgot {
+	display: inline-block;
+	float: right;
+	color: #999999;
+	font-family: inherit;
+}
+.forgot:hover{
+
+	color: #999999;
+}
+.input-error {
+	padding: 0;
+	margin-top: 0;
+	font-size: 0.9rem;
+	font-family: inherit;
+
+}
+.email-section  {
+	display: block;
+	width: 50%;
+	padding: 30px 20px;
+}
+.email-section .form-group {
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
+
+}
+
+.email-section	h3 {
+	padding-top: 20px;
+	margin-bottom: .5em;
+	font-size: 1.8em;
+	font-weight: bold;
+	display: block;
+}
+.email-control {
+	width: 100%;
+	padding: .1em .2em;
+	border: 1px solid #ccc;
+	background: #fdfcfc;
+	margin: 0;
+	color: #444;
+	font-size: 1em;
+	line-height: 1.8;
+	border-radius: 2px;
+	margin-bottom: 0;
+
+}
+
+.password-control {
+	width: 100%;
+	padding: 0;
+	border: 1px solid #ccc;
+	background: #fdfcfc;
+	margin: 0;
+	color: #444;
+	font-size: 1em;
+	line-height: 1.8;
+	border-radius: 2px;
+	margin-bottom: 0;
+
+}
+.password-section {
+	display: block;
+	width: 50%;
+	padding: 30px 20px;
+}
+.password-section .form-group {
+	display: flex;
+	flex-direction: column;
+	padding: 0px;
+
+}
+
