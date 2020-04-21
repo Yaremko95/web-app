@@ -62,7 +62,7 @@
 				<div class="reg">
 					<h3>New Customer</h3>
 					<p>Click Next to provide us with your details</p>
-					<a href="<?php echo base_url(); ?>auth/register"><button class="btn">Next</button></a>
+					<a href="<?php echo base_url(); ?>index.php/auth/register"><button class="btn">Next</button></a>
 		</div>
 	</div>
 
