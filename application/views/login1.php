@@ -62,7 +62,7 @@
 				<div class="reg">
 					<h3>New Customer</h3>
 					<p>Click Next to provide us with your details</p>
-					<a href="<?php echo base_url(); ?>index.php/auth/register"><button class="btn">Next</button></a>
+					<a href="<?php echo base_url(); ?>auth/register"><button class="btn">Next</button></a>
 		</div>
 	</div>
 
@@ -74,7 +74,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 </body>
 
-
+</html>
 
 
 
