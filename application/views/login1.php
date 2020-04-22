@@ -35,19 +35,20 @@
 						<h3>Existing customer</h3>
 							<?php  $error = $this->session->flashdata("error")?>
 
-							<div class="alert alert-<?php echo $error ? 'warning' : 'info' ?> alert-dismissible" role="alert">
-								<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<div class="alert alert-<?php echo $error ? 'warning' : 'info' ?> alert-dismissible" role="alert">
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 
-								<?php echo $error ? $error : 'Enter your username and password' ?>
-							</div>
+							<?php echo $error ? $error : 'Enter your username and password' ?>
+						</div>
+
 							<?php echo form_open(); ?>
-							<?php $error =form_error("email", "<p class='text-danger'>", '</p>');?>
+							<?php $error =form_error("email", "<small class='text-danger'>", '</small>');?>
 							<div class="form-group <?php echo $error ? 'has-error' : '' ?>">
 								<label for="email">Email</label>
 								<input type="email" value="<?php echo set_value("email") ?>" name="email"/>
 								<div class="input-error"> <?php echo $error; ?> </div>
 							</div>
-							<?php $error =form_error("password", "<p class='text-danger'>", '</p>');?>
+							<?php $error =form_error("password", "<small class='text-danger'>", '</small>');?>
 							<div class="form-group">
 								<label for="password">Password</label>
 								<input type="password"   name="password"/>

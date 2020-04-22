@@ -31,10 +31,14 @@ $(document).ready(function() {
 			{
 				$('#detail-cart').html(data);
 			}
+
 		});
 	}
 
-	$('.cart-btn').click(function () {
+
+
+
+	$('.cart-btn').click(function (event) {
 		var product_id = $(this).data("productid");
 		var product_artist = $(this).data("productartist");
 		var product_title = $(this).data("producttitle");
@@ -47,10 +51,14 @@ $(document).ready(function() {
 				method : "POST",
 				data : {product_id: product_id, product_artist: product_artist, product_title: product_title, product_price: product_price, quantity:quantity, image:image},
 				success: function(data){
+					$('.cart-btn').val(data.token);
 					load_cart_data();
 					showCart();
+
 				},
 			});
+		//el.stopImmediatePropagation();
+
 			})
 
 

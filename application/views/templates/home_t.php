@@ -97,11 +97,13 @@
 							<?php if($item->status=='sold'): ?>
 							<p class="sold-btn">Sold out</p>
 							<?php  else:  ?>
-							<button class="cart-btn" id="<?php echo $item->id;?>" data-butnid="<?php echo $item->id;?>" data-productid="<?php echo $item->id;?>" data-productartist="<?php echo $item->artist;?>"
-									data-producttitle="<?php echo $item->title;?>" data-productprice="<?php echo $item->price;?>" data-productimage="<?php echo $item->image;?>">
+
+							<button  class="cart-btn" id="<?php echo $item->id;?>" data-butnid="<?php echo $item->id;?>" data-productid="<?php echo $item->id;?>" data-productartist="<?php echo $item->artist;?>"
+									data-producttitle="<?php echo $item->title;?>" data-productprice="<?php echo $item->price;?>" data-productimage="<?php echo $item->image;?>"  value="add to cart" >
 								<i class="fa fa-shopping-cart"></i>
 								Add to cart
 							</button>
+
 							<?php endif; ?>
 						</div>
 
@@ -137,6 +139,7 @@
 </div>
 		<script type="text/javascript">
 			 baseUrl = '<?php echo base_url(); ?>';
+			// csrf_value = '<?php echo $this->security->get_csrf_hash(); ?>';
 		</script>
 		<script src="<?php echo base_url(); ?>asset/js/scrypt.js"></script>
 <script src="<?php echo base_url(); ?>asset/js/jquery-3.3.1.min.js"></script>

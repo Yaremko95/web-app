@@ -3,9 +3,11 @@
 class Auth_model extends CI_Model {
 
 	private $_data=array();
+
+
 	public function validate() {
-		$email =$this->input->post('email');
-		$password =md5($this->input->post('password'));
+		$email =$this->security->xss_clean($this->input->post('email'));
+		$password =$this->security->xss_clean(md5($this->input->post('password')));
 		$this->db->select('*');
 		$this->db->from('users');
 		$this->db->where('email', $email);
@@ -57,9 +59,9 @@ class Auth_model extends CI_Model {
 
 	public function updateEmail()
 	{
-		$new_email = $this->input->post('new_email');
-		$new_name = $this->input->post('new_name');
-		$new_surname = $this->input->post('new_surname');
+		$new_email = $this->security->xss_clean($this->input->post('new_email'));
+		$new_name = $this->security->xss_clean($this->input->post('new_name'));
+		$new_surname = $this->security->xss_clean($this->input->post('new_surname'));
 
 		$session_email = $this->session->userdata('email');
 		$user = $this->db->get_where('users', array('email' => $session_email));

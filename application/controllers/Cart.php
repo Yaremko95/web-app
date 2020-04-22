@@ -16,6 +16,8 @@ class Cart extends CI_Controller
 		} else {
 			$this->cmodel->add_to_cart($prod_id);
 		}
+
+
 		echo $this->show_cart();
 	}
 
@@ -23,9 +25,12 @@ class Cart extends CI_Controller
 		$this->cart->destroy();
 		$this->load->model('Cart_model', 'cmodel');
 		$data=$this->cmodel->getAllFromCart();
+		//$data['token'] = $this->security->get_csrf_hash();
 		if ($this->session->userdata("logged_in")) {
 			//$this->cmodel->set_user_cart($this->session->userdata('email'), $data);
 			$data=$this->cmodel->getAllFromUserCart($this->session->userdata('email'));
+			//$data['token'] = $this->security->get_csrf_hash();
+
 
 
 		}
@@ -84,7 +89,9 @@ class Cart extends CI_Controller
 
     				';
 		return $output;
+
 	}
+
 
 
 //load mini-cart

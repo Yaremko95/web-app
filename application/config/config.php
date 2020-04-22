@@ -326,6 +326,7 @@ $config['cache_query_string'] = FALSE;
 |
 */
 $config['encryption_key'] = 'femEDWTX$AQ@6HggkKn8RWGf!*ufK?KC';
+//femEDWTX$AQ@6HggkKn8RWGf!*ufK?KC
 
 /*
 |--------------------------------------------------------------------------
@@ -461,8 +462,13 @@ $config['csrf_protection'] = true;
 $config['csrf_token_name'] = 'csrf_test_name';
 $config['csrf_cookie_name'] = 'csrf_cookie_name';
 $config['csrf_expire'] = 7200;
-$config['csrf_regenerate'] = TRUE;
-$config['csrf_exclude_uris'] = array();
+$config['csrf_regenerate'] = false;
+$config['csrf_exclude_uris'] = array(
+	'cart/add_to_cart', 'cart/load_cart',
+	'home/products', 'cart/delete_product_from_cart', 'cart/increase_qty', 'cart/decrease_qty',
+	'auth/resetpassword'
+
+);
 
 /*
 |--------------------------------------------------------------------------

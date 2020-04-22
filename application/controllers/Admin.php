@@ -49,7 +49,6 @@ class Admin extends CI_Controller {
 						}
 					}
 
-
 				$this->load->view('admin/aside');
 				$this->load->view('admin/add_product');
 			}
@@ -57,7 +56,6 @@ class Admin extends CI_Controller {
 
 
 			public function product_inventory() {
-
 				$this->load->model('Admin_model', 'admin');
 				$data=$this->admin->get_data();
 				$this->load->view('admin/aside');

@@ -9,8 +9,8 @@
 	$allowAll['auth']['register']=true;
 	$allowAll['auth']['forgotPassword']=true;
 	$allowAll['auth']['logout']=true;
-	$allowAll['auth']['resetPassword']=true;
-	$allowAll['auth']['changePassword']=true;
+	$allowAll['auth']['resetpassword']=true;
+	$allowAll['auth']['changepassword']=true;
 	$allowAll['auth']['verify'] =true;
 
 	$allowAll['home']['products']=true;

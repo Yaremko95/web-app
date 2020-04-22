@@ -1,4 +1,5 @@
 <?php
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Auth extends CI_Controller
 {
@@ -6,6 +7,7 @@ class Auth extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
+
 	}
 
 	public function logged_in_check()
@@ -27,9 +29,12 @@ class Auth extends CI_Controller
 	{
 
 		$this->logged_in_check();
-		$this->form_validation->set_rules("email", "Email", "trim|required");
+
+
+		$this->form_validation->set_rules("email", "Email", "trim|required|valid_email");
 		$this->form_validation->set_rules("password", "Password", "trim|required");
 		if ($this->form_validation->run() == true) {
+
 			$this->load->model('auth_model', 'auth');
 			$this->load->model('Cart_model', 'cmodel');
 			$status = $this->auth->validate();
@@ -44,7 +49,6 @@ class Auth extends CI_Controller
 				$this->session->set_userdata("role_id", $user_role);
 				$this->session->set_userdata($this->auth->get_data());
 				$this->session->set_userdata("logged_in", true);
-
 
 					$data=$this->cmodel->getAllFromCart();
 					$this->cmodel->set_user_cart($this->session->userdata('email'), $data);
@@ -91,6 +95,7 @@ class Auth extends CI_Controller
 	}
 
 	public function verify () {
+		require_once(APPPATH.'libraries/random.php');
 
 		$email=$this->input->get('email');
 		$token= $this->input->get('token');
@@ -118,6 +123,7 @@ class Auth extends CI_Controller
 	}
 
 	public function forgotPassword () {
+		require_once(APPPATH.'libraries/random.php');
 		$this->form_validation->set_rules("email", "Email", "trim|required");
 		if($this->form_validation->run() == false) {
 			$this->load->view('forgotPassword');
@@ -148,6 +154,7 @@ class Auth extends CI_Controller
 
 
 	public function resetPassword() {
+		require_once(APPPATH.'libraries/random.php');
 		$email =$this->input->get('email');
 		$token =$this->input->get('token');
 		$user = $this->db->get_where('users', array('email'=>$email))->row_array();
