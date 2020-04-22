@@ -1,5 +1,5 @@
-runtime: php
-env:flex
+runtime: php55
+
 api_version: 1
 handlers:
 - url: /(.+\.(gif|png|jpg|css|js))$
