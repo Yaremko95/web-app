@@ -95,7 +95,7 @@ class Auth extends CI_Controller
 	}
 
 	public function verify () {
-		require_once(APPPATH.'libraries/random.php');
+		//require_once(APPPATH.'libraries/random.php');
 
 		$email=$this->input->get('email');
 		$token= $this->input->get('token');
@@ -123,7 +123,7 @@ class Auth extends CI_Controller
 	}
 
 	public function forgotPassword () {
-		require_once(APPPATH.'libraries/random.php');
+		//require_once(APPPATH.'libraries/random.php');
 		$this->form_validation->set_rules("email", "Email", "trim|required");
 		if($this->form_validation->run() == false) {
 			$this->load->view('forgotPassword');
