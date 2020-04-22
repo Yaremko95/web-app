@@ -131,7 +131,7 @@ class Auth extends CI_Controller
 			$email = $this->input->post('email');
 			$user=$this->db->get_where('users', array('email'=>$email, 'is_active'=>1))->row_array();
 			if($user) {
-				$token = base64_encode(random_bytes(32));
+				$token = bin2hex(openssl_random_pseudo_bytes(32, $cstrong));
 				$user_token=array(
 					'email'=>$email,
 					'token'=>$token,
@@ -154,7 +154,7 @@ class Auth extends CI_Controller
 
 
 	public function resetPassword() {
-		require_once(APPPATH.'libraries/random.php');
+		//require_once(APPPATH.'libraries/random.php');
 		$email =$this->input->get('email');
 		$token =$this->input->get('token');
 		$user = $this->db->get_where('users', array('email'=>$email))->row_array();

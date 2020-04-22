@@ -20,7 +20,7 @@ class Register_model extends CI_Model {
 			'role_id'=>2
 		);
 		$this->db->insert('users', $data);
-		$token =base64_encode(random_bytes(32));
+		$token =bin2hex(openssl_random_pseudo_bytes(32, $cstrong));
 		$user_token =array(
 			'email' => $this->input->post('email'),
 			'token'=>$token,
