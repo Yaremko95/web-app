@@ -50,7 +50,7 @@ class Auth extends CI_Controller
 				$user_role = $this->auth->user_role();
 				$new_cart = array();
 				foreach ($this->cart->contents() as $content) {
-					$cart = array(
+					$cart = (object) array(
 						'id' => $content->id,
 						'qty' => $content->qty,
 					);
