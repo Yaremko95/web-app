@@ -51,8 +51,8 @@ class Auth extends CI_Controller
 				$new_cart = array();
 				foreach ($this->cart->contents() as $content) {
 					$cart = (object) array(
-						'id' => $content->id,
-						'qty' => $content->qty,
+						'id' => $content['id'],
+						'qty' => $content['qty'],
 					);
 					array_push($new_cart, $cart);
 				}
