@@ -13,6 +13,8 @@ class User extends CI_Controller
 
 	public  function user_profile() {
 
+		//// check if exists in database;
+
 		if($this->session->userdata("role_id")=='1') {
 			redirect('admin/index');
 		};

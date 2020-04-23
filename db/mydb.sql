@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 20, 2020 at 11:29 PM
+-- Generation Time: Apr 23, 2020 at 08:57 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -28,9 +28,6 @@ SET time_zone = "+00:00";
 -- Table structure for table `ci_sessions`
 --
 
-
-
--- --------------------------------------------------------
 
 --
 -- Table structure for table `genre`
@@ -99,15 +96,6 @@ CREATE TABLE `prod_cart` (
   `sess_id` int(128) NOT NULL,
   `qty` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data for table `prod_cart`
---
-
-INSERT INTO `prod_cart` (`id`, `prod_id`, `sess_id`, `qty`) VALUES
-(0, 30, 0, 2),
-(0, 32, 0, 1),
-(0, 34, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -182,8 +170,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`u_id`, `email`, `password`, `name`, `surname`, `country`, `city`, `street`, `zip`, `building`, `phone`, `is_active`, `role_id`) VALUES
+(78, 'gfdsdf', 'bvcx', 'gbvc', 'bvfc', 'cx', ' vcdx', ' cdx', ' vcx', 'vcx', ' vc', 1, 1),
 (78, 'tetianayaremko@gmail.com', '49f69a0cf315718d22eff7f04b10c387', 'Tetiana', 'Repetowska', 'Poland', 'OPOLE', 'AP 127 14 MYKOLAJCZYKA', '45-271', '12', '+4888378205', 1, 2),
-(79, 'yyaremko@gmail.com', '49f69a0cf315718d22eff7f04b10c387', 'tetiana yaremko', 'yaremko', 'Poland', 'OPOLE', 'AP 127 14 MYKOLAJCZYKA', '45-271', '12', '+4888378205', 1, 2);
+(80, 'yaremko@gmail.com', '49f69a0cf315718d22eff7f04b10c387', 'tetiana yaremko', 'yaremko', 'Poland', 'OPOLE', 'AP 127 14 MYKOLAJCZYKA', '45-271', '12', '+4888378205', 0, 2),
+(81, 'tetiankayaremko@gmail.com', '49f69a0cf315718d22eff7f04b10c387', 'tetiana yaremko', 'yaremko', 'Poland', 'OPOLE', 'AP 127 14 MYKOLAJCZYKA', '45-271', '12', '+4888378205', 0, 2);
 
 -- --------------------------------------------------------
 
@@ -197,6 +187,16 @@ CREATE TABLE `user_cart` (
   `qty` int(255) NOT NULL,
   `id` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `user_cart`
+--
+
+INSERT INTO `user_cart` (`user_email`, `prod_id`, `qty`, `id`) VALUES
+('tetianayaremko@gmail.com', 34, 1, 7),
+('tetianayaremko@gmail.com', 30, 2, 8),
+('tetianayaremko@gmail.com', 32, 2, 9),
+('tetianayaremko@gmail.com', 35, 1, 12);
 
 -- --------------------------------------------------------
 
@@ -237,7 +237,25 @@ CREATE TABLE `user_token` (
 INSERT INTO `user_token` (`id`, `email`, `token`, `date_created`) VALUES
 (10, 'yaremko@gmail.com', 'ZNMdxQ+TwrJOvfZ+XCcVBuroSD9E8nWUEL/vaTGHXlk=', 1586410013),
 (11, 'yaremko@gmail.com', '4VP/QqJmj8PT5WKPMsrJ9ohy75z+LX0vcorgFT+7uaM=', 1586410429),
-(31, 'yaremko@gmail.com', '9lOAxt/FJQafdrFkCWs/j1MqxCcVdD8xSVSxA0EwZ8s=', 1587305081);
+(31, 'yaremko@gmail.com', '9lOAxt/FJQafdrFkCWs/j1MqxCcVdD8xSVSxA0EwZ8s=', 1587305081),
+(32, 'tetianayaremko@gmail.com', 'u8WU5z+3dN6U6+Uyz2kfOmRtd8WWGXi/Jq9r/ApljCU=', 1587498008),
+(33, 'tetianayaremko@gmail.com', 'M2Oc3eVDooXubDfD0LXOXApXTFCcXUI85sDbDU10VVI=', 1587498037),
+(34, 'tetianayaremko@gmail.com', 'i0NKqlJACdrEumUZt8dFmDMQux/MU33ZKtJo7l7KlP4=', 1587498168),
+(35, 'tetianayaremko@gmail.com', '2x6dAE36Rf0t66ZkQ+eJIMBqBjaNPkb9a44r+N2DkgA=', 1587498172),
+(36, 'tetianayaremko@gmail.com', 'DFYDSdfg01AZoGINVZFELiG7RGYiu/jLN+vGtfYi+zs=', 1587505739),
+(37, 'tetianayaremko@gmail.com', '6iXX3Ja7VfwnDhy4eEzqrmaEt54tApWeqmtcaLe57cI=', 1587551370),
+(38, 'tetianayaremko@gmail.com', 'af0BV0UmTPzUs1vwsTnE2PkFx1wPFESTJ5dcNgvMF2I=', 1587551386),
+(39, 'tetianayaremko@gmail.com', 'Ju6ZCmO8//2+WRZL3Pni8zVB0ZnWoQ6AuzGiX10RE1Q=', 1587551438),
+(40, 'tetianayaremko@gmail.com', 'a2fwS1JlA1bV9AL1f3BbXBZxcYSsjS3oME5YmVvzeRc=', 1587551557),
+(41, 'tetianayaremko@gmail.com', 'B3e1Kw8lX8enQYndoVruItGvgBBOYfWk5YAZ39BdTWo=', 1587551631),
+(42, 'tetianayaremko@gmail.com', '3+6iwxbsIycD8oD828mGIa8BimLFth0lNkbPjl3GVco=', 1587552022),
+(43, 'yaremko@gmail.com', 'PYM91wfYe+dx7YQSR12ibldDdfcv9vNs5KCLe8u9lj8=', 1587585651),
+(44, 'tetiankayaremko@gmail.com', '0+uzPf+eKlI/wQEHM6AdiUtO6/rhY3AI7Ayv0lx83/c=', 1587589722),
+(45, 'tetianayaremko@gmail.com', '84phau3cYjQbW+B6kklxbnm74LsC9A7QsLN3bJwQqlw=', 1587593297),
+(46, 'tetianayaremko@gmail.com', 'borFwfNqFnM+OZ/YaacteWJitTSSkOrOQ8LBLgYUHDw=', 1587593694),
+(47, 'tetianayaremko@gmail.com', 'a20599d0d66ba67b45eb3dbc014be8c009541f53f417918216dcc0bb84486876', 1587605444),
+(48, 'tetianayaremko@gmail.com', '7b2ff62d708fdef9f567af720a9af6f2f75e0e08c80c88b7ab5c8ecf0faacb7b', 1587605837),
+(49, 'tetianayaremko@gmail.com', '2494f5a4fb0313db8b34df71784d9797acf0a2f75ab0cb8fdc1ecfff70d91661', 1587606310);
 
 --
 -- Indexes for dumped tables
@@ -333,7 +351,7 @@ ALTER TABLE `genre`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT for table `status`
@@ -351,7 +369,13 @@ ALTER TABLE `transaction`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `u_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
+  MODIFY `u_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
+
+--
+-- AUTO_INCREMENT for table `user_cart`
+--
+ALTER TABLE `user_cart`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `user_role`
@@ -363,7 +387,7 @@ ALTER TABLE `user_role`
 -- AUTO_INCREMENT for table `user_token`
 --
 ALTER TABLE `user_token`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- Constraints for dumped tables

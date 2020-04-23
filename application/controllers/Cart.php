@@ -13,27 +13,32 @@ class Cart extends CI_Controller
 		if ($this->session->userdata("logged_in")) {
 			$this->cmodel->add_to_user_cart($this->session->userdata('email'), $prod_id);
 			//echo '<pre>'; echo $this->session->userdata('email'); echo $prod_id; echo '</pre>';
-		} else {
-			$this->cmodel->add_to_cart($prod_id);
 		}
+		//	$this->cmodel->add_to_cart($prod_id);       ///changed
+			$data=$this->cmodel->get_prod_data($prod_id);
+			$cart = array(
+				'id' => $data->id,
+				'name' => $data->artist,
+				'price' => $data->price,
+				'qty' => 1,
+				'title' => $data->title,
+				'image' => $data->image,
+			);
+			$this->cart->insert($data);
+
 
 
 		echo $this->show_cart();
 	}
 
 	public function updated_db_cart(){
-		$this->cart->destroy();
+	////	$this->cart->destroy();                                       ///changed
 		$this->load->model('Cart_model', 'cmodel');
-		$data=$this->cmodel->getAllFromCart();
-		//$data['token'] = $this->security->get_csrf_hash();
+		//$data=$this->cmodel->getAllFromCart();                         //changed
+
 		if ($this->session->userdata("logged_in")) {
 			//$this->cmodel->set_user_cart($this->session->userdata('email'), $data);
 			$data=$this->cmodel->getAllFromUserCart($this->session->userdata('email'));
-			//$data['token'] = $this->security->get_csrf_hash();
-
-
-
-		}
 
 			$new_cart = array();
 			foreach ($data as $item) {
@@ -50,10 +55,7 @@ class Cart extends CI_Controller
 				array_push($new_cart, $cart);
 			}
 			$this->cart->insert($new_cart);
-
-
-
-
+		}
 	}
 
 
@@ -115,9 +117,11 @@ class Cart extends CI_Controller
 		$this->load->model('Cart_model', 'cmodel');
 		if ($this->session->userdata("logged_in")) {
 			$this->cmodel->remove_from_user_cart($this->session->userdata('email'), $prod_id);
-		} else {
-			$this->cmodel->remove_from_cart($prod_id);
 		}
+//		else {
+//			//$this->cmodel->remove_from_cart($prod_id);
+//
+//		}
 
 		$this->cart->update($data);
 		echo $this->show_cart();
@@ -139,14 +143,16 @@ class Cart extends CI_Controller
 			'rowid' => $this->input->post('row_id'),
 			'qty' => $qty,
 		);
-		$this->cart->update($data);
-		echo $this->show_cart();
+
 		$this->load->model('Cart_model', 'cmodel');
 		if ($this->session->userdata("logged_in")) {
 			$this->cmodel->add_to_user_cart($this->session->userdata('email'), $prod_id);
-		} else {
-			$this->cmodel->add_to_cart($prod_id);
 		}
+//		} else {
+//			$this->cmodel->add_to_cart($prod_id);
+//		}
+			$this->cart->update($data);
+			echo $this->show_cart();
 	}
 
 
@@ -167,9 +173,10 @@ class Cart extends CI_Controller
 		$this->load->model('Cart_model', 'cmodel');
 		if ($this->session->userdata("logged_in")) {
 			$this->cmodel->minus_qty_user_cart($this->session->userdata('email'), $prod_id, $qty);
-		} else {
-			$this->cmodel->minus_qty($prod_id, $qty);
 		}
+//		else {
+//			$this->cmodel->minus_qty($prod_id, $qty);
+//		}
 		$this->cart->update($data);
 		echo $this->show_cart();
 	}

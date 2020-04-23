@@ -47,12 +47,13 @@ class Cart_model extends CI_Model
 			$this->db->query("UPDATE prod_cart set qty='$qty'  where prod_id='$prod_id' and sess_id='$session_id'");
 
 		} else {
-			$data = array(
-				'prod_id' => $prod_id,
-				'sess_id'=>session_id(),
-				'qty'=>1
-			);
-			$this->db->insert('prod_cart', $data);
+//			$data = array(
+//				'prod_id' => $prod_id,
+//				'sess_id'=>session_id(),
+//				'qty'=>1
+//			);
+//			$this->db->insert('prod_cart', $data);
+
 		}
 	}
 
