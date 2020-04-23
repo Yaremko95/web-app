@@ -22,6 +22,7 @@ class Auth extends CI_Controller
 
 		$this->session->unset_userdata("logged_in");
 		$this->session->sess_destroy();
+		$this->cart->destroy();
 		redirect("auth/login");
 	}
 
