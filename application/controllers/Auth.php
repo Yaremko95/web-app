@@ -58,10 +58,11 @@ class Auth extends CI_Controller
 				}
 //				echo '<pre>'; echo $new_cart; echo '</pre>';
 //				die();
-				$this->cmodel->set_user_cart($this->session->userdata('email'), $new_cart);
+
 				$this->session->set_userdata("role_id", $user_role);
 				$this->session->set_userdata($this->auth->get_data());
 				$this->session->set_userdata("logged_in", true);
+				$this->cmodel->set_user_cart($this->session->userdata('email'), $new_cart);
 
 
 
