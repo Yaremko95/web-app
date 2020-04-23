@@ -61,6 +61,8 @@ class Cart extends CI_Controller
 				array_push($new_cart, $cart);
 			}
 
+		//$this->cmodel->sentToUCart($new_cart);
+
 
 
 
