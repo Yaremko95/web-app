@@ -49,6 +49,8 @@ class Auth extends CI_Controller
 
 				$user_role = $this->auth->user_role();
 				$data=$this->cart->contents();
+				echo '<pre>'; echo $data; echo '</pre>';
+				die();
 				$this->cmodel->set_user_cart($this->session->userdata('email'), array('new_cart'=>$data));
 				$this->session->set_userdata("role_id", $user_role);
 				$this->session->set_userdata($this->auth->get_data());
