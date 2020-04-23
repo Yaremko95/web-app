@@ -100,7 +100,7 @@ class Auth extends CI_Controller
 			$this->load->model('Register_model', 'reg');
 			$this->reg->register_user();
 			$name=$this->input->post('name');
-			$this->load->view("auth/registration_successful", $name);
+			$this->load->view("registration_successful", $name);
 
 		}
 
