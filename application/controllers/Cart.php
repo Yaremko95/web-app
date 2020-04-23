@@ -13,6 +13,7 @@ class Cart extends CI_Controller
 		if ($this->session->userdata("logged_in")) {
 			$this->cmodel->add_to_user_cart($this->session->userdata('email'), $prod_id);
 			//echo '<pre>'; echo $this->session->userdata('email'); echo $prod_id; echo '</pre>';
+
 		}
 		//	$this->cmodel->add_to_cart($prod_id);       ///changed
 			$data=$this->cmodel->get_prod_data($prod_id);
@@ -24,7 +25,7 @@ class Cart extends CI_Controller
 				'title' => $data->title,
 				'image' => $data->image,
 			);
-			$this->cart->insert($data);
+			$this->cart->insert($cart);
 
 
 
@@ -54,6 +55,7 @@ class Cart extends CI_Controller
 				);
 				array_push($new_cart, $cart);
 			}
+			$this->cart->destroy();
 			$this->cart->insert($new_cart);
 		}
 	}
