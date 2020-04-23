@@ -148,8 +148,8 @@ class Cart_model extends CI_Model
 
 
 	public function set_user_cart($email, $data) {
-		foreach ($data->rowid as $item ) {
-			if($this->exists_in_user_cart($item['id'], $email)) {
+		foreach ($data['rowid ']as $item ) {
+			if($this->exists_in_user_cart($item->id, $email)) {
 				$this->db->query("UPDATE user_cart set qty='$item->qty'  where prod_id='$item->id'");
 			} else {
 				$user_cart= array(
