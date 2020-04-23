@@ -209,11 +209,6 @@ class Auth extends CI_Controller
 	}
 
 
-	public function registration_success()  {
-
-		$this->load->view('registration_sucess');
-
-	}
 
 
 
