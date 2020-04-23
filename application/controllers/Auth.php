@@ -46,8 +46,8 @@ class Auth extends CI_Controller
 			} elseif ($status == ERR_EMAIL_NOT_ACTIVE) {
 				$this->session->set_flashdata("error", "Email is not active");
 			} else {
-				$data=$this->cart->contents();
-				$this->cmodel->set_user_cart($this->session->userdata('email'), (object)$data);
+				$data=(object)$this->cart->contents();
+				$this->cmodel->set_user_cart($this->session->userdata('email'), $data);
 				$user_role = $this->auth->user_role();
 				$this->session->set_userdata("role_id", $user_role);
 				$this->session->set_userdata($this->auth->get_data());
