@@ -45,6 +45,11 @@ class Cart extends CI_Controller
 			foreach ($data as $item) {
 				$prod_id = $item->prod_id;
 				$data_db = $this->cmodel->get_prod_data($prod_id);
+				foreach ($this->cart->contents() as $content) {
+					if($content['id']==$prod_id) {
+						$item->qty=$content['qty'];
+					}
+				}
 				$cart = array(
 					'id' => $data_db->id,
 					'name' => $data_db->artist,
@@ -55,6 +60,10 @@ class Cart extends CI_Controller
 				);
 				array_push($new_cart, $cart);
 			}
+
+
+
+
 			$this->cart->destroy();
 			$this->cart->insert($new_cart);
 		}

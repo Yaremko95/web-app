@@ -13,12 +13,25 @@ class Cart_model extends CI_Model
 		return $query->row();
 	}
 
-	public function getAllFromCart() {
-	$this->db->select('prod_id, qty');
-	$this->db->from('prod_cart');
-	$query = $this->db->get();
-	return $query->result();
+//	public function getAllFromCart() {
+//	$this->db->select('prod_id, qty');
+//	$this->db->from('prod_cart');
+//	$query = $this->db->get();
+//	return $query->result();
+//	}
+	public function getAllFromCart()
+	{
+		foreach ($this->cart->contents() as $items) {
+			$cart = array(
+				'id' => $items->id,
+				'qty' => $items->qty,
+
+			);
+		}
 	}
+
+
+
 
 	public function getAllFromUserCart($email) {
 		$this->db->select('prod_id, qty');
