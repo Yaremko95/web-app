@@ -99,7 +99,8 @@ class Auth extends CI_Controller
 		if ($this->form_validation->run() == TRUE) {
 			$this->load->model('Register_model', 'reg');
 			$this->reg->register_user();
-			redirect("register_successful/registration_complete", "refresh");
+			$name=$this->input->post('name');
+			$this->load->view("auth/registration_successful", $name);
 
 		}
 
@@ -204,6 +205,13 @@ class Auth extends CI_Controller
 			redirect("auth/login");
 
 		}
+
+	}
+
+
+	public function registration_success()  {
+
+		$this->load->view('registration_sucess');
 
 	}
 
