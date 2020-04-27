@@ -20,7 +20,7 @@
 	$allowAll['cart']['delete_product_from_cart']=true;
 	$allowAll['cart']['increase_qty']=true;
 	$allowAll['cart']['decrease_qty']=true;
-
+	$allowAll['auth']['registration_success']=true;
 	$allowAll['common']['unauthorized']=true;
 
 

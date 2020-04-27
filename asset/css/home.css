@@ -36,6 +36,13 @@ div {
 	margin: 0 auto;
 
 }
+.shipping-offer {
+	background-color: #203229;
+	color: whitesmoke;
+	display: flex;
+	justify-content: center;
+	padding: 2px 0;
+}
 .header-top {
 	display: flex;
 	justify-content: space-between;
@@ -102,11 +109,24 @@ div {
 
 }
 .navigation {
-background-color: #f1f6f3;
+	background-color: #f1f6f3;
 	padding: 0;
 	display: flex;
 	justify-content: center;
 
+
+	text-align: center;
+}
+@media (max-width: 1150px) {
+	.navigation{
+		font-size: 0.8em;
+	}
+}
+@media (max-width: 950px) {
+	.navigation{
+		flex-wrap: wrap;
+
+	}
 }
 .navigation li {
 	display: inline;
@@ -117,6 +137,12 @@ background-color: #f1f6f3;
 
 
 }
+@media (max-width: 950px) {
+	.navigation li{
+		height:10px;
+
+	}
+}
 .navigation a{
 	color: #444444;
 }
@@ -125,7 +151,7 @@ background-color: #f1f6f3;
 /* home page*/
 
 .head-offer {
-	margin-top: 170px;
+	margin-top: 200px;
 	background-color: #2D473A;
 	box-shadow: 5px 10px 8px #4c7762;
 }
@@ -137,6 +163,12 @@ background-color: #f1f6f3;
 	 justify-content: space-around;
 	 background-color: #2D473A;
  }
+@media (max-width: 950px) {
+	.offer{
+		font-size: 0.6em;
+
+	}
+}
 
 
  .offer a {
@@ -197,10 +229,9 @@ background-color: #f1f6f3;
 	margin-left: 2rem;
 }
 .h_sec{
-
-
 	position: relative;
 }
+
 .section-header
 {
 
@@ -226,6 +257,12 @@ background-color: #f1f6f3;
 	padding: 10px 15px;
 	background-color: white;
 
+}
+@media (max-width: 950px) {
+	.section-header{
+		font-size: 0.7em;
+
+	}
 }
 
 .shop-items {

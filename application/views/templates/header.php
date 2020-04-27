@@ -9,6 +9,9 @@
 	<div class="container">
 		<div class="header-wrapper">
 			<header class="header-section" >
+				<div class="shipping-offer">
+					<span>Free Spain Shipping on Orders of €50+ </span>
+				</div>
 				<div class="header-top">
 					<div class="logo">
 						<a href="<?php echo base_url(); ?>index.php/home/products"><img src="<?= asset_url('img/logo.png')?>" alt=""></a>

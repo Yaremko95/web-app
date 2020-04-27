@@ -26,7 +26,7 @@ class Admin extends CI_Controller {
 
 				$config['upload_path'] = './uploads/';
 				$config['allowed_types']  = 'gif|jpg|png|jpeg';
-				$config['max_size']  = 2048;
+				$config['max_size']  = 4048;
 				$file_name="image".time();
 				$config['file_name']=$file_name;
 				$this->upload->initialize($config);

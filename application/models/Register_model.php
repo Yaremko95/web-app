@@ -36,7 +36,7 @@ class Register_model extends CI_Model {
 			'protocol'=>'smtp',
 			'smtp_host'=>'ssl://smtp.googlemail.com',
 			'smtp_user'=>'tetianayaremko@gmail.com',
-			'smtp_pass'=>'****',
+			'smtp_pass'=>'*',
 			'smtp_port'=> '465',
 			'mailtype'=> 'html',
 			'charset'=> 'iso-8859-1',
