@@ -12,6 +12,7 @@
 	$allowAll['auth']['resetpassword']=true;
 	$allowAll['auth']['changepassword']=true;
 	$allowAll['auth']['verify'] =true;
+	$allowAll['auth']['email_availability'] =true;
 
 	$allowAll['home']['products']=true;
 	$allowAll['cart']['add_to_cart']=true;
