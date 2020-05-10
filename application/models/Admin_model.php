@@ -78,7 +78,7 @@ class Admin_model extends CI_Model
 	{
 				$query = "
 		  SELECT * FROM product
-		  WHERE status_id = '2' OR status_id = '1'
+		  WHERE status_id = '2' 
 		  ";
 
 				if(isset($minimum_price, $maximum_price) && !empty($minimum_price) &&  !empty($maximum_price))
