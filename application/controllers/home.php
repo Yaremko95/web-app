@@ -20,6 +20,7 @@ class Home extends CI_Controller {
 
 		$this->load->view('templates/header');
 		$this->load->view('templates/home_t', array('data'=>$data));
+		$this->load->view('templates/footer');
 
 
 
@@ -32,6 +33,7 @@ class Home extends CI_Controller {
 
 		$this->load->view('templates/header');
 		$this->load->view('all_products', array('data'=>$data));
+		$this->load->view('templates/footer');
 		
 
 	}
@@ -74,8 +76,8 @@ class Home extends CI_Controller {
 		$start = ($page-1) * $config['per_page'];
 		$output = array(
 			'pagination_link'  => $this->pagination->create_links(),
-		'product_list'   => $this->admin->fetch_data($config["per_page"], $start, $minimum_price, $maximum_price, $genre)
-		);
+		'product_list'   => $this->admin->fetch_data($config["per_page"], $start, $minimum_price, $maximum_price, $genre),
+			'number_of_items'=>$config['total_rows'] );
 		echo json_encode($output);
 		//echo 'hello';
 	}

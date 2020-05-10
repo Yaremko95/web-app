@@ -66,22 +66,23 @@
 
 		</div>
        
-		<div class="filter-section">
+		<div class="filter-section d-flex justify-content-between">
 			<div class="price ">
-				<div class="d-flex">
-					<span>Price</span>
+				<div class="d-flex align-items-center">
+					<span class="mx-3">Price:</span>
 					<input type="hidden" id="hidden_minimum_price" value="5" />
 					<input type="hidden" id="hidden_maximum_price" value="200" />
-					<p id="price_show">5 - 200</p>
+					<span class="mr-4" id="price_show">5 - 200</span>
+					<div class="" id="price_range"style="width: 5rem;"></div>
 				</div>
 
-				<div class="" id="price_range"style="width: 5rem;"></div>
+
 			</div>
-			<div>
+			<div class="d-flex">
 				<div>
-					<span><span class="prod-number"></span> Products</span>
+					<span><span class="mr-2" id="prod-number"></span>Products</span>
 				</div>
-				<div id="pagination_link" ></div>
+				<div class="px-4" id="pagination_link" ></div>
 			</div>
 		</div>
 

@@ -132,7 +132,7 @@
 		
 		<div class="container mb-4">
 			<div class="row d-flex justify-content-end">
-				<button type="button" class="btn btn-light py-2 px-8">See All</button>
+				<button type="button" class="btn btn-light  px-8">See All</button>
 			</div>
 		</div>
 
@@ -190,10 +190,13 @@
 			 baseUrl = '<?php echo base_url(); ?>';
 
 		</script>
-	<script src="<?php echo base_url(); ?>asset/js/scrypt.js"></script>	
-<script src="<?php echo base_url(); ?>asset/js/jquery-3.3.1.min.js"></script>
-<script src="<?php echo base_url(); ?>asset/js/bootstrap.min.js"></script>
-<script src="<?php echo base_url(); ?>asset/js/hceader-top.js"></script>
+
+		<script src="<?php echo base_url(); ?>asset/js/scrypt.js"></script>
+		<script src="<?php echo base_url(); ?>asset/js/jquery-3.3.1.min.js"></script>
+		<script src="<?php echo base_url(); ?>asset/js/bootstrap.min.js"></script>
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 <script>
 	
 </script>

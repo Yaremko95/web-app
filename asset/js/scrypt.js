@@ -25,6 +25,7 @@ $(document).ready(function() {
 				//$('#shop-items').html(data);
 				 $('#shop-items').html(data.product_list);
 				 $('#pagination_link').html(data.pagination_link);
+				 $('#prod-number').html(data.number_of_items);
 
 				$('.cart-btn').click(function (event) {
 

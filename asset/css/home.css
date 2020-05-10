@@ -559,6 +559,8 @@ display: grid;
 	max-width: 1405px;
 	margin: 0 auto;
 	padding: .5em;
+	display: flex;
+	flex-wrap: wrap;
 }
 .genre-section input {
 	visibility: hidden;
@@ -577,5 +579,26 @@ display: grid;
 	background-color:  #3a3a3a;
 	color: #ffffff;
 
+}
+.pagination li {
+	padding: 0 5px;
+	border: 1px solid #3a3a3a ;
+	margin: 0 2px;
+
+}
+.pagination li.active {
+	border: 1px solid #626262;
+}
+.pagination li.active a{
+	color: #626262 ;
+
+}
+.pagination a {
+	color: #3a3a3a;
+	font-size: 1.1rem;
+}
+.filter-section span {
+	color: #3a3a3a;
+	font-size: 1.1rem;
 }
 
