@@ -12,6 +12,7 @@
 	<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/home.css" type="text/css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/bootstrap.min.css" type="text/css">
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 
 
@@ -31,7 +32,7 @@
 						</a>
 					</li>
 					<li>
-						<a href="" class="">
+						<a href="#exclusives" class="">
 							<h4>EXCLUSIVES</h4>
 							<p>SHOP NOW</p>
 						</a>
@@ -88,63 +89,114 @@
 
 		<div class="shop-items">
 			<?php if(count($data)): ?>
+			<?php $i=0; ?>
 				<?php foreach ($data as $item) { ?>
-					<div class="shop-item">
-						<div class="image">
-						<a href="<?php echo base_url(); ?>index.php/items/item1">
-								<img class="shop-item-image" src="<?php echo base_url("uploads/".$item->image) ?>" alt="Ariana Grande: thank u, next exclusive clear/pink lp"/>
+					<?php if($item->feature=='recommended') { ?>
+						<div class="shop-item">
+							<div class="image">
+							<a href="<?php echo base_url(); ?>index.php/items/item1">
+									<img class="shop-item-image" src="<?php echo base_url("uploads/".$item->image) ?>" alt="Ariana Grande: thank u, next exclusive clear/pink lp"/>
+								</a>
+								<?php if($item->status=='sold'): ?>
+								<p class="sold-btn">Sold out</p>
+								<?php  else:  ?>
+
+								<button  class="cart-btn" id="<?php echo $item->id;?>" data-butnid="<?php echo $item->id;?>" data-productid="<?php echo $item->id;?>" data-productartist="<?php echo $item->artist;?>"
+										data-producttitle="<?php echo $item->title;?>" data-productprice="<?php echo $item->price;?>" data-productimage="<?php echo $item->image;?>"  value="add to cart" >
+									<i class="fa fa-shopping-cart"></i>
+									Add to cart
+								</button>
+
+								<?php endif; ?>
+							</div>
+
+							<a class="artist" href="#">
+								<div class="shop-item-details">
+									<span class="brand"><?php echo $item->artist; ?></span>
+								</div>
 							</a>
-							<?php if($item->status=='sold'): ?>
-							<p class="sold-btn">Sold out</p>
-							<?php  else:  ?>
 
-							<button  class="cart-btn" id="<?php echo $item->id;?>" data-butnid="<?php echo $item->id;?>" data-productid="<?php echo $item->id;?>" data-productartist="<?php echo $item->artist;?>"
-									data-producttitle="<?php echo $item->title;?>" data-productprice="<?php echo $item->price;?>" data-productimage="<?php echo $item->image;?>"  value="add to cart" >
-								<i class="fa fa-shopping-cart"></i>
-								Add to cart
-							</button>
+								<div class="title">
+									<span class="format double-vinyl-lp"><?php echo $item->title; ?></span>
+								</div>
+								<div>
+									<span class="price">€<?php echo $item->price; ?></span>
+								</div>
 
-							<?php endif; ?>
 						</div>
-
-						<a class="artist" href="#">
-							<div class="shop-item-details">
-								<span class="brand"><?php echo $item->artist; ?></span>
-							</div>
-						</a>
-
-							<div class="title">
-								<span class="format double-vinyl-lp"><?php echo $item->title; ?></span>
-							</div>
-							<div>
-								<span class="price">€<?php echo $item->price; ?></span>
-							</div>
-
-					</div>
-
-
+					
+					<?php } ?>
 				<?php } ?>
 			<?php endif; ?>
 		</div>
-		<div id="detail-cart" class="mini-cart-item">
-
+		
+		<div class="container mb-4">
+			<div class="row d-flex justify-content-end">
+				<button type="button" class="btn btn-light py-2 px-8">See All</button>
+			</div>
 		</div>
 
 <div class="h_sec">
-	<h3 class="section-header"><span>RECOMMENDED PRE-ORDERS</span></h3>
+	<h3 class="section-header" id="exclusives"><span>EXCLUSIVES</span></h3>
 </div>
+<div class="shop-items">
+			<?php if(count($data)): ?>
+			<?php $i=0; ?>
+				<?php foreach ($data as $item) { ?>
+					<?php if($item->feature=='exclusive') { ?>
+						<div class="shop-item">
+							<div class="image">
+							<span class="badge rounded-0">Exclusive</span>
+							<a href="<?php echo base_url(); ?>index.php/items/item1">
+									<img class="shop-item-image" src="<?php echo base_url("uploads/".$item->image) ?>" alt="Ariana Grande: thank u, next exclusive clear/pink lp"/>
+									
+								</a>
+								<?php if($item->status=='sold'): ?>
+								<p class="sold-btn">Sold out</p>
+								<?php  else:  ?>
 
+								<button  class="cart-btn" id="<?php echo $item->id;?>" data-butnid="<?php echo $item->id;?>" data-productid="<?php echo $item->id;?>" data-productartist="<?php echo $item->artist;?>"
+										data-producttitle="<?php echo $item->title;?>" data-productprice="<?php echo $item->price;?>" data-productimage="<?php echo $item->image;?>"  value="add to cart" >
+									<i class="fa fa-shopping-cart"></i>
+									Add to cart
+								</button>
+
+								<?php endif; ?>
+							</div>
+
+							<a class="artist" href="#">
+								<div class="shop-item-details">
+									<span class="brand"><?php echo $item->artist; ?></span>
+								</div>
+							</a>
+
+								<div class="title">
+									<span class="format double-vinyl-lp"><?php echo $item->title; ?></span>
+								</div>
+								<div>
+									<span class="price">€<?php echo $item->price; ?></span>
+								</div>
+
+						</div>
+					
+					<?php } ?>
+				<?php } ?>
+			<?php endif; ?>
+		</div>
 
 
 </div>
 		<script type="text/javascript">
 			 baseUrl = '<?php echo base_url(); ?>';
-			// csrf_value = '<?php echo $this->security->get_csrf_hash(); ?>';
+
 		</script>
-		<script src="<?php echo base_url(); ?>asset/js/scrypt.js"></script>
+	<script src="<?php echo base_url(); ?>asset/js/scrypt.js"></script>	
 <script src="<?php echo base_url(); ?>asset/js/jquery-3.3.1.min.js"></script>
 <script src="<?php echo base_url(); ?>asset/js/bootstrap.min.js"></script>
 <script src="<?php echo base_url(); ?>asset/js/hceader-top.js"></script>
+<script>
+	
+</script>
 
 </body>
 

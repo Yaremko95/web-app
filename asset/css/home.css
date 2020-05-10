@@ -63,7 +63,7 @@ div {
 	display: flex;
 	flex-direction: row-reverse;
 	width: 40%;
-	justify-content: space-between;
+	
 
 	align-items: center;
 
@@ -90,11 +90,11 @@ div {
 	text-decoration: none;
 	transition: all .4s ease;
 }
-.fa {
+/* .fa {
 	font-weight: 900;
 	font-size: 1.4rem;
 
-}
+} */
 .cart-box, .toggle-account, .user-access, .about-menu, .contact-menu {
 	display: inline-block;
 	list-style: none;
@@ -151,7 +151,7 @@ div {
 /* home page*/
 
 .head-offer {
-	margin-top: 200px;
+	margin-top: 132px;
 	background-color: #2D473A;
 	box-shadow: 5px 10px 8px #4c7762;
 }
@@ -162,6 +162,12 @@ div {
  .offer {
 	 justify-content: space-around;
 	 background-color: #2D473A;
+ }
+ .row .see-all-btn {
+	font-size: 1.3rem;
+	font-weight: bold;
+	background-color: #2D473A;
+	color: #AE860D;
  }
 @media (max-width: 950px) {
 	.offer{
@@ -294,6 +300,18 @@ div {
 
 	overflow: hidden;            /* clip the excess when child gets bigger than parent */
 }
+.image .badge {
+	position: absolute ;
+	z-index: 10;
+	left:0;
+	font-size: 1.1rem !important;
+	font-weight: bold !important;
+	background-color: #3a3a3a;
+	color: #FFF;
+	box-shadow: 0 1px 5px rgba(0,0,0,.53);
+}
+
+
 .cart-btn, .sold-btn {
 position: absolute;
 	top: 80%;
@@ -499,3 +517,65 @@ display: grid;
 	/*grid-column-gap: 1.5rem;*/
 	/*margin: 1.5rem 0;*/
 }
+
+.jumbotron {
+	height: 60vh;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+  	background-position:center;
+	margin-top: 132px;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('https://vmp-www.imgix.net/images/Screen_Shot_2020-05-05_at_7.22.32_PM.original.png?auto=format&fit=crop&w=1090&h=660&bri=-10');;
+	color: whitesmoke;
+
+}
+.jumbotron-content,
+.filter-section {
+	max-width: 1405px;
+	margin:0 auto;
+}
+.jumbotron h1 {
+	font-weight: bold;
+}
+
+.filter-section  a {
+	
+	font-weight:700;
+	text-transform: uppercase;
+	text-decoration:none;
+	color: #3a3a3a;
+}
+.filter-section  a:hover {
+	background-color: white;
+	color: #626262 ;
+	
+	
+}
+.filter-list {
+	transition:  2000ms ease-in-out;
+}
+.genre-section {
+
+	max-width: 1405px;
+	margin: 0 auto;
+	padding: .5em;
+}
+.genre-section input {
+	visibility: hidden;
+}
+.genre-section [type="checkbox"] + label  {
+	cursor: pointer;
+	text-transform: capitalize;
+	border: 1px solid #3a3a3a ;
+	color: #3a3a3a;
+	padding: 5px 10px;
+	border-radius: 10px;
+	box-shadow: 0 1px 5px rgba(0,0,0,.53);
+
+}
+.genre-section [type="checkbox"]:checked + label  {
+	background-color:  #3a3a3a;
+	color: #ffffff;
+
+}
+

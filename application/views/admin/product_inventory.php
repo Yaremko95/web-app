@@ -70,6 +70,7 @@
 			<th>Quantity</th>
 			<th>Image</th>
 			<th>Status</th>
+			<th>Feature</th>
 			<th>Update</th>
 			<th>Delete</th>
 		</tr>
@@ -88,6 +89,7 @@
 			<td><?php echo $item->q_ty; ?></td>
 			<td><img src="<?php echo base_url("uploads/".$item->image) ?>"></td>
 			<td><?php echo $item->status; ?></td>
+			<td><?php echo $item->feature; ?></td>
 			<td><?php echo anchor('admin/update_item/'.$item->id, 'Update', array('class'=>'btn btn-success')); ?></td>
 			<td><?php echo anchor('admin/delete_item/'.$item->id, 'Delete', array('class'=>'btn btn-danger')); ?></td>
 		</tr>

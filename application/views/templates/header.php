@@ -4,6 +4,7 @@
 		<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/home.css" type="text/css">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/bootstrap.min.css" type="text/css">
 		<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     </head>
     <body>
 	<div class="container">
@@ -22,28 +23,7 @@
 								<a href="<?php echo base_url(); ?>index.php/user/user_profile" >
 									<i class="fa fa-user-circle-o"></i>
 								</a>
-								<!--
-								<ul class="active-nav" style="display: block;">
-									<li class="profile">
-										<a href="/profile.html" title="Profile">
-											Profile
-										</a>
-									</li>
-
-									<li class="orders">
-										<a href="/orders.html" title="Order History">
-											Order History
-										</a>
-									</li>
-
-									<li class="logout">
-										<form method="post" action="/">
-											<button type="submit" title="Log Out" name="logout">
-												Log Out
-											</button>
-										</form>
-									</li>
-								</ul> -->
+							
 							</div>
 
 
@@ -75,19 +55,16 @@
 
 					</div>
 						<div class="user-access">
-							<a href="<?php echo base_url(); ?>index.php/auth/register">Register</a>
-							<a href="<?php echo base_url(); ?>index.php/auth/login" class="in">Log in</a>
-							<a href="<?php echo base_url(); ?>index.php/auth/logout" class="out">Log Out</a>
+							<a class="pr-2" href="<?php echo base_url(); ?>index.php/home/products">Home</a>
+							<a class="pr-4" href="<?php echo base_url(); ?>index.php/home/all_products">All</a>
+							<a class="pr-2" href="<?php echo base_url(); ?>index.php/auth/register">Register</a>
+							<a class="pr-2" href="<?php echo base_url(); ?>index.php/auth/login" class="in">Log in</a>
+							<a class="pr-4" href="<?php echo base_url(); ?>index.php/auth/logout" class="out">Log Out</a>
 						</div>
-						<div class="about-menu">
-							<a href="">About</a>
-						</div>
-						<div class="contact-menu">
-							<a href="">Contact</a>
-						</div>
+					
 					</div>
 				</div>
-				<nav>
+				<!-- <nav>
 						<ul id="navigation" class="navigation">
 
 							<li >
@@ -119,7 +96,7 @@
 								<a class="parent-cat parent-cat-0" href="">Ska + Reggae</a>
 
 						</ul>
-					</nav>
+					</nav> -->
 
 			</header>
 
@@ -133,14 +110,11 @@
 <!--	<script src="--><?php //echo base_url(); ?><!--asset/js/scrypt.js"></script>-->
 
 	<!-- Header Info Begin -->
-
-	<script src="<?php echo base_url(); ?>asset/js/jquery-3.3.1.min.js"></script>
-	<script src="<?php echo base_url(); ?>asset/js/bootstrap.min.js"></script>
-	<script src="<?php echo base_url(); ?>asset/js/jquery.js"></script>
-	<script src="<?php echo base_url(); ?>asset/js/jquery-ui.js"></script>
+	
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  
 
 	</body>
 </html>
-
-
-

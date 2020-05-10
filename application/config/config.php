@@ -466,7 +466,7 @@ $config['csrf_regenerate'] = false;
 $config['csrf_exclude_uris'] = array(
 	'cart/add_to_cart', 'cart/load_cart',
 	'home/products', 'cart/delete_product_from_cart', 'cart/increase_qty', 'cart/decrease_qty',
-	'auth/resetpassword','auth/email_availability'
+	'auth/resetpassword','auth/email_availability', 'home/filter_products/1', 'home/filter_products/2','home/filter_products/3', 'home/all_products'
 
 );
 

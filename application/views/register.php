@@ -216,6 +216,8 @@
 			  </form>
 		  </div>
 	  </div>
+	  
+	
   </div>
 
 
@@ -251,6 +253,9 @@
 				})
 			}
 		  })
+
+		  $(document).ready(function() {
+
 	  })
   </script>
   </body>
