@@ -52,7 +52,7 @@ class Admin_model extends CI_Model
 
 	//get product item data in order to update
 	public function get_product($item_id) {
-		$this->db->select('product.id, product.artist, product.title, product.genre, product.description, product.price, product.q_ty, product.image, status.status, feature.feature');
+		$this->db->select('product.id, product.artist, product.title, product.genre, product.description, product.price, product.q_ty, product.image, status.status, product.feature');
 		$this->db->from('product');
 		$this->db->join('status', 'product.status_id = status.id_status');
 		$this->db->where('id', $item_id);
@@ -127,7 +127,7 @@ class Admin_model extends CI_Model
 				<span class="badge rounded-0">Exclusive</span>';
 			}
 			$output .='	
-			<a href="<?php echo base_url(); ?>index.php/items/item1">
+			<a href="'.base_url('index.php/home/item/'.$row['id']).'">
 			<img class="shop-item-image" src="'.base_url('uploads/'.$row['image']).'" alt=""/>
 					
 				</a>

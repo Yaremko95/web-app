@@ -11,36 +11,36 @@
 
 </head>
 <style>
-	.container-fluid{
+	.footer{
 		background-color: #101010;
 		color: whitesmoke;
 	}
-	.container-fluid > .row:first-of-type{
+	.footer > .row:first-of-type{
 		background-color: black;
 	}
-	.container-fluid a,
-	 .container-fluid p{
+	.footer a,
+	 .footer p{
 		color:whitesmoke;
 		font-size: 1.1rem;
 	}
-	.container-fluid ul {
+	.footer ul {
 		list-style-type: none;
 	}
-	.container-fluid ul > li:first-of-type, .container-fluid p:first-of-type {
+	.footer ul > li:first-of-type, .footer p:first-of-type {
 		text-transform: uppercase;
 		font-weight: bold;
 		font-size: 1.3rem;
 	}
-	.container-fluid li {
+	.footer li {
 		margin: 5px 0;
 	}
-	.container-fluid .container  ul li i {
+	.footer .container  ul li i {
 		font-size: 1.4rem;
 	}
 </style>
 <body>
 
-	<div class="container-fluid">
+	<div class="container-fluid footer">
 
 			<div class="row py-4 justify-content-center">
 				<a class="mr-3" href="https://www.facebook.com/tania.yaremko" target="_blank"><i class="fa fa-facebook-square fa-2x"></i></a>

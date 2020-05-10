@@ -17,6 +17,7 @@
 	$allowAll['home']['products']=true;
 	$allowAll['home']['all_products']=true;
 	$allowAll['home']['filter_products']=true;
+	$allowAll['home']['item']=true;
 	$allowAll['cart']['add_to_cart']=true;
 	$allowAll['cart']['show_cart']=true;
 	$allowAll['cart']['load_cart']=true;

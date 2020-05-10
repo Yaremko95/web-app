@@ -3,7 +3,7 @@ body {
 	overflow-y: scroll;
 	position: relative;
 	background: #fff;
-	font-style: Helvetica;
+	font-family: 'Lato', sans-serif;
 	font-family: Arial, Helvetica, sans-serif;
 
 	letter-spacing: -1px;
@@ -27,6 +27,9 @@ body {
 
 
 }
+.bolder {
+	font-weight: bold;
+}
 div {
 	display: block;
 }
@@ -37,7 +40,7 @@ div {
 
 }
 .shipping-offer {
-	background-color: #203229;
+	background-color:  #3a3a3a;
 	color: whitesmoke;
 	display: flex;
 	justify-content: center;
@@ -152,7 +155,7 @@ div {
 
 .head-offer {
 	margin-top: 132px;
-	background-color: #2D473A;
+	background-color: #3a3a3a;
 	box-shadow: 5px 10px 8px #4c7762;
 }
 .offer-list {
@@ -161,12 +164,12 @@ div {
 }
  .offer {
 	 justify-content: space-around;
-	 background-color: #2D473A;
+	 background-color:  #3a3a3a;
  }
  .row .see-all-btn {
 	font-size: 1.3rem;
 	font-weight: bold;
-	background-color: #2D473A;
+	background-color:  #3a3a3a;
 	color: #AE860D;
  }
 @media (max-width: 950px) {
@@ -316,7 +319,7 @@ div {
 position: absolute;
 	top: 80%;
 	right: 0;
-	background-color:  #2D473A;
+	background-color:  #3a3a3a;
 	text-transform: uppercase;
 	padding:0.1rem 0.5rem ;
 	transition: all 0.3s linear;

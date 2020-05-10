@@ -8,7 +8,7 @@
 
 
 
-
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/home.css" type="text/css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/bootstrap.min.css" type="text/css">
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -94,7 +94,7 @@
 					<?php if($item->feature=='recommended') { ?>
 						<div class="shop-item">
 							<div class="image">
-							<a href="<?php echo base_url(); ?>index.php/items/item1">
+							<a href="<?php echo base_url(); ?>index.php/home/item/<?php echo $item->id;?>">
 									<img class="shop-item-image" src="<?php echo base_url("uploads/".$item->image) ?>" alt="Ariana Grande: thank u, next exclusive clear/pink lp"/>
 								</a>
 								<?php if($item->status=='sold'): ?>
