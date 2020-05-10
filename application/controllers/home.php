@@ -81,5 +81,16 @@ class Home extends CI_Controller {
 		echo json_encode($output);
 		//echo 'hello';
 	}
+	
+	public function item($item_id) {
+		$this->load->model('Admin_model', 'admin');
+		$data=$this->admin->get_product($item_id);
+
+
+		$this->load->view('templates/header');
+		$this->load->view('item', array('data'=>$data));
+		$this->load->view('templates/footer');
+
+	}
 
 }
