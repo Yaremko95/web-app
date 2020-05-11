@@ -23,8 +23,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-//$config['base_url'] = 'https://wbt-2-ty-272811.appspot.com/';
-$config['base_url'] = 'http://localhost/webapp/ci/';
+$config['base_url'] = 'https://wbt-2-ty-272811.appspot.com/';
+//$config['base_url'] = 'http://localhost/webapp/ci/';
 
 /*
 |--------------------------------------------------------------------------

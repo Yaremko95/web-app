@@ -234,29 +234,27 @@
 	  base_url = '<?php echo base_url(); ?>';
 	  $(document).ready(function() {
 
-	  	$('#email').change(function() {
+		  $('#email').change(function () {
 
-	  		var email=$('#email').val();
+			  var email = $('#email').val();
 
-	  		if(email!='')
-			{
+			  if (email != '') {
 
-				$.ajax({
-					url: base_url+'index.php/auth/email_availability',
-					method: "POST",
-					data: {email:email},
-					success:function(data) {
+				  $.ajax({
+					  url: base_url + 'index.php/auth/email_availability',
+					  method: "POST",
+					  data: {email: email},
+					  success: function (data) {
 
-						$('#email_result').html(data);
-					}
+						  $('#email_result').html(data);
+					  }
 
-				})
-			}
+				  })
+			  }
 		  })
-
-		  $(document).ready(function() {
-
 	  })
+
+
   </script>
   </body>
 
