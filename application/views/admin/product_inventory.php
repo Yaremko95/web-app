@@ -87,7 +87,7 @@
 			<td><?php echo $item->description; ?></td>
 			<td><?php echo $item->price; ?></td>
 			<td><?php echo $item->q_ty; ?></td>
-			<td><img src="<?php echo base_url("uploads/".$item->image) ?>"></td>
+			<td><img src="<?php echo $item->image ?>"></td>
 			<td><?php echo $item->status; ?></td>
 			<td><?php echo $item->feature; ?></td>
 			<td><?php echo anchor('admin/update_item/'.$item->id, 'Update', array('class'=>'btn btn-success')); ?></td>

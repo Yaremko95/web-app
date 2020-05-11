@@ -59,7 +59,7 @@
 
 				<tr>
 					<td class="user-cart-item-details " width="10%" >
-						<div class="user-cart-imag"><img style="height: 80px;" class="" src="<?php echo base_url("uploads/".$item->image) ?>" /></div>
+						<div class="user-cart-imag"><img style="height: 80px;" class="" src="<?php echo $item->image ?>" /></div>
 					</td>
 						<td valign="middle" align="left"  width="70%" >
 							<p class="name"><?php echo $item->name;?> </p>

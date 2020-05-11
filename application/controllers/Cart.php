@@ -81,7 +81,7 @@ class Cart extends CI_Controller
 			$no++;
 			$output .='
 						<div class="single-item-in-cart" data-cartitemid="'.$items['id'].'">
-						<a><img class="mini-image" src="'.base_url('uploads/'.$items['image']).'" style="height: 90px;"/></a>
+						<a><img class="mini-image" src="'.$items['image'].'" style="height: 90px;"/></a>
 
 						</div>
 							<div style="" class="description">

@@ -96,7 +96,7 @@
 						<div class="shop-item">
 							<div class="image">
 							<a href="<?php echo base_url(); ?>index.php/home/item/<?php echo $item->id;?>">
-									<img class="shop-item-image" src="<?php echo base_url("uploads/".$item->image) ?>" alt="Ariana Grande: thank u, next exclusive clear/pink lp"/>
+									<img class="shop-item-image" src="<?php echo $item->image ?>" alt="Ariana Grande: thank u, next exclusive clear/pink lp"/>
 								</a>
 								<?php if($item->status=='sold'): ?>
 								<p class="sold-btn">Sold out</p>

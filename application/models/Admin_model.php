@@ -129,7 +129,7 @@ class Admin_model extends CI_Model
 			}
 			$output .='	
 			<a href="'.base_url('index.php/home/item/'.$row['id']).'">
-			<img class="shop-item-image" src="'.base_url('uploads/'.$row['image']).'" alt=""/>
+			<img class="shop-item-image" src="'.$row['image'].'" alt=""/>
 					
 				</a>
 				';
