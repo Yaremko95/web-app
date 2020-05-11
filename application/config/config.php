@@ -540,11 +540,7 @@ $config['proxy_ips'] = '';
 
 $config['upload_bucket'] = 'wbt-2-ty-272811.appspot.com';
 
-$config['upload_path'] = ENVIRONMENT == 'production' ?
-	'gs://' . $config['upload_bucket']
-	: './uploads/';
+$config['upload_path'] = 'gs://' . $config['upload_bucket'];
 // Prefix for building public URL to the uploaded file
-$config['upload_prefix'] = ENVIRONMENT == 'production' ?
-	'https://storage.cloud.google.com/' .
-	$config['upload_bucket'] . '/'
-	: $config['base_url'] . 'uploads/';
+$config['upload_prefix'] = 'https://storage.cloud.google.com/' . $config['upload_bucket'] . '/';
+
