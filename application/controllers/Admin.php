@@ -23,6 +23,7 @@ class Admin extends CI_Controller {
 				$this->form_validation->set_rules("quantity", "Quantity", "required");
 				$this->form_validation->set_rules("price", "Price", "required");
 				$this->form_validation->set_rules("description", "Description", "required");
+				$this->form_validation->set_rules("feature", "Feature", "required");
 
 
 				//$config['upload_path'] = './uploads/';
@@ -80,6 +81,7 @@ class Admin extends CI_Controller {
 				$this->form_validation->set_rules("price", "Price", "required");
 				$this->form_validation->set_rules("description", "Description", "required");
 				$this->form_validation->set_rules("status", "Status", "required");
+				$this->form_validation->set_rules("feature", "Feature", "required");
 
 //				$config['upload_path'] = './uploads/';
 //				$config['allowed_types']  = 'gif|jpg|png|jpeg';

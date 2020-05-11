@@ -128,10 +128,24 @@
 					<label for="status">Status</label>
 				</td>
 				<td>
-					<select name="status" id="status" value="<?php echo set_value('price', $data->status) ?>">
+					<select name="status" id="status" value="<?php echo set_value('status', $data->status) ?>">
 						<option value="in stock" <?php if ($data->status == 'in stock') echo 'selected="selected"'; ?>>in stock</option>
 						<option value="sold" <?php if ($data->status == 'sold') echo ' selected="selected"'; ?>>sold</option>
 						<option value="on hold" <?php if ($data->status == 'on hold') echo ' selected="selected"'; ?>>on hold</option>
+					</select>
+					<small> <?php echo $error; ?></small>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<?php $error =form_error("feature", "<small class='text-danger'>", '</small>');?>
+					<label for="feature">Feature</label>
+				</td>
+				<td>
+					<select name="feature" id="feature" value="<?php echo set_value('feature', $data->feature) ?>">
+						<option <?php if ($data->feature == 'recommended') echo 'selected="selected"'; ?>>recommended</option>
+						<option <?php if ($data->feature == 'exclusive') echo 'selected="selected"'; ?>>exclusive</option>
+
 					</select>
 					<small> <?php echo $error; ?></small>
 				</td>

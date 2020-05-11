@@ -37,7 +37,7 @@ class Admin_model extends CI_Model
 			'price' => $this->input->post('price'),
 			'description' => $this->input->post('description'),
 			'image' =>$image,
-			'feature' =>$this->input>post('feature'),
+			'feature' =>$this->input->post('feature'),
 			'status_id'=>(int)$status_id->id_status
 		);
 		return $data;

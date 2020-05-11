@@ -139,6 +139,20 @@
 						<small> <?php echo $error; ?></small>
 					</td>
 				</tr>
+				<tr>
+					<td>
+						<?php $error =form_error("feature", "<small class='text-danger'>", '</small>');?>
+						<label for="feature">Feature</label>
+					</td>
+					<td>
+						<select name="feature" id="feature">
+							<option>recommended</option>
+							<option>exclusive</option>
+
+						</select>
+						<small> <?php echo $error; ?></small>
+					</td>
+				</tr>
 				</tbody>
 			</table>
 			<div ></div>
