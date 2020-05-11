@@ -117,11 +117,11 @@
 				</tr>
 				<tr>
 					<td>
-						<?php $error =form_error("image", "<small class='text-danger'>", '</small>');?>
+						<?php $error =form_error("file", "<small class='text-danger'>", '</small>');?>
 						<label for="image">Image</label>
 					</td>
 					<td>
-						<input name="image" type="file" class="form-control-file" id="image" aria-describedby="fileHelp">
+						<input name="file" type="file" class="form-control-file" id="image" aria-describedby="fileHelp">
 						<div> <?php echo $error; ?></div>
 					</td>
 				</tr>

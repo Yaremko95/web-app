@@ -25,7 +25,8 @@ class Admin_model extends CI_Model
 		$query = $this->db->get();
 		$status_id=$query->row();
 
-		$image =$this->upload->data();
+		//$image =$this->upload->data();
+		$image= $this->config->item('upload_prefix'). $this->upload->data('file_name');
 
 		//insert data from add_product input
 		$data = array(
@@ -35,7 +36,7 @@ class Admin_model extends CI_Model
 			'q_ty' => $this->input->post('quantity'),
 			'price' => $this->input->post('price'),
 			'description' => $this->input->post('description'),
-			'image' =>$image['file_name'],
+			'image' =>$image,
 			'feature' =>$this->input>post('feature'),
 			'status_id'=>(int)$status_id->id_status
 		);

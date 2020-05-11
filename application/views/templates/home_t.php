@@ -17,6 +17,7 @@
 
 
 <body>
+
 		<div class="head-offer">
 			<div class="offer-list">
 				<ul class="navigation offer">

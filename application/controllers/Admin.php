@@ -24,13 +24,16 @@ class Admin extends CI_Controller {
 				$this->form_validation->set_rules("price", "Price", "required");
 				$this->form_validation->set_rules("description", "Description", "required");
 
-				$config['upload_path'] = './uploads/';
+
+				//$config['upload_path'] = './uploads/';
+				$config['upload_path'] = $this->config->item('upload_path');
 				$config['allowed_types']  = 'gif|jpg|png|jpeg';
 				$config['max_size']  = 4048;
 				$file_name="image".time();
 				$config['file_name']=$file_name;
+				$config['encrypt_name'] = TRUE;
 				$this->upload->initialize($config);
-				$field_name = "image";
+				$field_name = "file";
 
 					if ($this->form_validation->run() == TRUE) {
 						if(!$this->upload->do_upload($field_name)) {
@@ -41,6 +44,7 @@ class Admin extends CI_Controller {
 
 						} else {
 							$this->load->model('Admin_model', 'admin');
+
 							$this->admin->add_product();
 							$this->session->set_flashdata("message", "<div class=\"alert alert-success alert-dismissible fade show\" role=\"alert\">
   			Product has been added to the database<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">
@@ -77,13 +81,21 @@ class Admin extends CI_Controller {
 				$this->form_validation->set_rules("description", "Description", "required");
 				$this->form_validation->set_rules("status", "Status", "required");
 
-				$config['upload_path'] = './uploads/';
+//				$config['upload_path'] = './uploads/';
+//				$config['allowed_types']  = 'gif|jpg|png|jpeg';
+//				$config['max_size']  = 2048;
+//				$file_name="image".time();
+//				$config['file_name']=$file_name;
+//				$this->upload->initialize($config);
+//				$field_name = "file";
+				$config['upload_path'] = $this->config->item('upload_path');
 				$config['allowed_types']  = 'gif|jpg|png|jpeg';
-				$config['max_size']  = 2048;
+				$config['max_size']  = 4048;
 				$file_name="image".time();
 				$config['file_name']=$file_name;
+				$config['encrypt_name'] = TRUE;
 				$this->upload->initialize($config);
-				$field_name = "image";
+				$field_name = "file";
 
 				if ($this->form_validation->run() == TRUE) {
 					if(!$this->upload->do_upload($field_name)) {

@@ -536,3 +536,15 @@ $config['rewrite_short_tags'] = FALSE;
 | Array:		array('10.0.1.200', '192.168.5.0/24')
 */
 $config['proxy_ips'] = '';
+
+
+$config['upload_bucket'] = 'wbt-2-ty-272811.appspot.com';
+
+$config['upload_path'] = ENVIRONMENT == 'production' ?
+	'gs://' . $config['upload_bucket']
+	: './uploads/';
+// Prefix for building public URL to the uploaded file
+$config['upload_prefix'] = ENVIRONMENT == 'production' ?
+	'https://storage.cloud.google.com/' .
+	$config['upload_bucket'] . '/'
+	: $config['base_url'] . 'uploads/';

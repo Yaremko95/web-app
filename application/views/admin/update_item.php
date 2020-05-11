@@ -118,7 +118,7 @@
 					<label for="image">Image</label>
 				</td>
 				<td>
-					<input name="image" type="file" class="form-control-file" id="image" aria-describedby="fileHelp" value="<?php set_value(base_url("uploads/".$data->image) )?>">
+					<input name="file" type="file" class="form-control-file" id="image" aria-describedby="fileHelp" value="<?php set_value(base_url("uploads/".$data->image) )?>">
 
 				</td>
 			</tr>

@@ -9,3 +9,6 @@ handlers:
 
 - url: /.*
   script: index.php
+
+env_variables:
+  GOOGLE_STORAGE_BUCKET: "wbt-2-ty-272811.appspot.com"
