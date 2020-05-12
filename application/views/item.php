@@ -66,7 +66,7 @@
 		<div class="container-fluid item-container mb-2" style="margin-top: 145px; max-width:1405px">
 			<div class="row  row-cols-1 row-cols-md-2 ">
 				<div class="col d-flex justify-content-center ">
-					<a href=""> <img class="img-thumbnail" style="border:3px solid  #AE860D" src=""/><?php echo $data->image;?></a>
+					<a href=""> <img class="img-thumbnail" style="border:3px solid  #AE860D" src="<?php echo $data->image;?>"/></a>
 
 				</div>
 				<div class="col pt-md-5">
