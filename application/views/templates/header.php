@@ -63,8 +63,12 @@
 							<a class="pr-2" href="<?php echo base_url(); ?>index.php/home/products">Home</a>
 							<a class="pr-4" href="<?php echo base_url(); ?>index.php/home/all_products">All</a>
 							<a class="pr-2" href="<?php echo base_url(); ?>index.php/auth/register">Register</a>
+							<?php if($this->session->userdata('logged_in')) { ?>
+								<a class="pr-4" href="<?php echo base_url(); ?>index.php/auth/logout" class="out">Log Out</a>
+							<?php } else {?>
 							<a class="pr-2" href="<?php echo base_url(); ?>index.php/auth/login" class="in">Log in</a>
-							<a class="pr-4" href="<?php echo base_url(); ?>index.php/auth/logout" class="out">Log Out</a>
+							<?php } ?>
+
 						</div>
 					
 					</div>
