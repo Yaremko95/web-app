@@ -58,16 +58,16 @@
 				<div class="col-12 col-md-6 col-lg-3">
 					<ul>
 						<li>Categories</li>
-						<li><a href="">Home</a></li>
-						<li><a>Bank Holiday Sale 2020</a></li>
+						<li><a href="<?php echo base_url(); ?>index.php/home/products">Home</a></li>
+						<li><a href="#">Bank Holiday Sale 2020</a></li>
 						<li>Pre-Orders</li>
 						<li><a>Deal of the Day</a></li>
 						<li><a>Signed</a></li>
-						<li><a>Genres</a></li>
-						<li><a>Coloured Vynil</a></li>
-						<li><a>Limited Edition</a></li>
-						<li><a>Redeem</a></li>
-						<li><a>SOV Messenger</a></li>
+						<li><a href="<?php echo base_url(); ?>index.php/home/all_products">Genres</a></li>
+						<li><a href="#">Coloured Vynil</a></li>
+						<li><a href="#"> Limited Edition</a></li>
+						<li><a href="#">Redeem</a></li>
+						<li><a href="#">SOV Messenger</a></li>
 					</ul>
 				</div>
 				<div class="col-12 col-md-6 col-lg-4">

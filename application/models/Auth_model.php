@@ -24,8 +24,12 @@ class Auth_model extends CI_Model {
 						'email' => $row[0]->email,
 						'name'=> $row[0]->name,
 						'surname'=> $row[0]->surname,
-						'country'=> $row[0]->name,
-						'street'=> $row[0]->name,
+						'country'=> $row[0]->country,
+						'city'=> $row[0]->city,
+						'street'=> $row[0]->street,
+						'zip'=> $row[0]->zip,
+						'building'=> $row[0]->building,
+						'phone'=> $row[0]->phone,
 						'is_active' =>$row[0]->is_active,
 						'role_id'=> $row[0]->role_id
 					);
@@ -55,7 +59,46 @@ class Auth_model extends CI_Model {
 		return 2;
 	}
 
+public function updateDelivery() {
+	$country = $this->security->xss_clean($this->input->post('country'));
+	$city = $this->security->xss_clean($this->input->post('city'));
+	$street = $this->security->xss_clean($this->input->post('street'));
+	$zip = $this->security->xss_clean($this->input->post('zip'));
+	$building = $this->security->xss_clean($this->input->post('building'));
+	$phone = $this->security->xss_clean($this->input->post('phone'));
 
+	$session_email = $this->session->userdata('email');
+	$user = $this->db->get_where('users', array('email' => $session_email));
+	if ($user) {
+		$this->db->query("UPDATE users set country='$country'  where email='$session_email'");
+		$this->db->query("UPDATE users set city='$city'  where email='$session_email'");
+		$this->db->query("UPDATE users set street='$street'  where email='$session_email'");
+		$this->db->query("UPDATE users set zip='$zip'  where email='$session_email'");
+		$this->db->query("UPDATE users set building='$building'  where email='$session_email'");
+		$this->db->query("UPDATE users set phone='$phone'  where email='$session_email'");
+		$this->db->select('*');
+		$this->db->from('users');
+		$this->db->where('email', $session_email);
+		$query = $this->db->get();
+		if ($query->num_rows() == 1) {
+			$row = $query->result();
+
+			$this->_data = array(
+				'email' => $row[0]->email,
+				'name'=> $row[0]->name,
+				'surname'=> $row[0]->surname,
+				'country'=> $row[0]->country,
+				'city'=> $row[0]->city,
+				'street'=> $row[0]->street,
+				'zip'=> $row[0]->zip,
+				'building'=> $row[0]->building,
+				'phone'=> $row[0]->phone,
+				'is_active' =>$row[0]->is_active,
+				'role_id'=> $row[0]->role_id
+			);
+		}
+	}
+}
 
 	public function updateEmail()
 	{
@@ -78,13 +121,16 @@ class Auth_model extends CI_Model {
 
 				$this->_data = array(
 					'email' => $row[0]->email,
-					'password' =>md5($row[0]->password),
-					'name' => $row[0]->name,
-					'surname' => $row[0]->surname,
-					'country' => $row[0]->name,
-					'street' => $row[0]->name,
-					'is_active' => $row[0]->is_active,
-					'role_id' => $row[0]->role_id
+					'name'=> $row[0]->name,
+					'surname'=> $row[0]->surname,
+					'country'=> $row[0]->country,
+					'city'=> $row[0]->city,
+					'street'=> $row[0]->street,
+					'zip'=> $row[0]->zip,
+					'building'=> $row[0]->building,
+					'phone'=> $row[0]->phone,
+					'is_active' =>$row[0]->is_active,
+					'role_id'=> $row[0]->role_id
 				);
 			}
 		}
@@ -105,13 +151,16 @@ class Auth_model extends CI_Model {
 				$row = $query->result();
 				$this->_data = array(
 					'email' => $row[0]->email,
-					'password' =>md5($row[0]->password),
-					'name' => $row[0]->name,
-					'surname' => $row[0]->surname,
-					'country' => $row[0]->name,
-					'street' => $row[0]->name,
-					'is_active' => $row[0]->is_active,
-					'role_id' => $row[0]->role_id
+					'name'=> $row[0]->name,
+					'surname'=> $row[0]->surname,
+					'country'=> $row[0]->country,
+					'city'=> $row[0]->city,
+					'street'=> $row[0]->street,
+					'zip'=> $row[0]->zip,
+					'building'=> $row[0]->building,
+					'phone'=> $row[0]->phone,
+					'is_active' =>$row[0]->is_active,
+					'role_id'=> $row[0]->role_id
 
 				);
 			}

@@ -18,6 +18,7 @@ class User extends CI_Controller
 		if($this->session->userdata("role_id")=='1') {
 			redirect('admin/index');
 		};
+
 		if(isset($_POST['update'])) {
 
 			$this->form_validation->set_rules('new_email', 'Email', 'required|valid_email',
@@ -104,6 +105,41 @@ class User extends CI_Controller
 		return TRUE;
 	}
 
+	public function delivery_address()
+	{
+		if($this->session->userdata("role_id")=='1') {
+			redirect('admin/index');
+		};
+
+			$this->form_validation->set_rules('country', 'Country', 'required',
+				array('required' => 'Please, enter new country in order to update'));
+			$this->form_validation->set_rules('city', 'City', 'required',
+				array('required' => 'Please, enter new city in order to update'));
+			$this->form_validation->set_rules('street', 'Street', 'required',
+				array('required' => 'Please, enter new street in order to update'));
+			$this->form_validation->set_rules('zip', 'zip', 'required',
+				array('required' => 'Please, enter new zip in order to update'));
+		$this->form_validation->set_rules('building', 'Building', 'required',
+				array('required' => 'Please, enter new building in order to update'));
+
+			$this->form_validation->set_rules('phone', 'Phone', 'required',
+				array('required' => 'Please, enter new phone number in order to update'));
+
+
+			if ($this->form_validation->run()==true) {
+
+				$this->load->model('auth_model', 'auth');
+				$this->auth->updateDelivery();
+				$this->session->set_userdata($this->auth->get_data());
+				$this->session->set_flashdata("d_message", "<div class=\"alert alert-success alert-dismissible fade show\" role=\"alert\">
+  			Your data has been updated!<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">
+  			<span aria-hidden=\"true\">&times;</span></button></div>");
+				//redirect('user/delivery_address');
+			}
+
+		$this->load->view('delievery_address');
+
+	}
 
 
 

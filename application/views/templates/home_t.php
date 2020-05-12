@@ -91,7 +91,8 @@
 		<div class="shop-items">
 			<?php if(count($data)): ?>
 			<?php $i=0; ?>
-				<?php foreach ($data as $item) { ?>
+				<?php foreach (array_reverse($data) as $item) { ?>
+					<?php if($i<12) { ?>
 					<?php if($item->feature=='recommended') { ?>
 						<div class="shop-item">
 							<div class="image">
@@ -125,7 +126,9 @@
 								</div>
 
 						</div>
-					
+
+						<?php } ?>
+						<?php $i++; ?>
 					<?php } ?>
 				<?php } ?>
 			<?php endif; ?>
@@ -143,13 +146,14 @@
 <div class="shop-items">
 			<?php if(count($data)): ?>
 			<?php $i=0; ?>
-				<?php foreach ($data as $item) { ?>
+				<?php foreach (array_reverse($data) as $item) { ?>
+					<?php if($i<12) { ?>
 					<?php if($item->feature=='exclusive') { ?>
 						<div class="shop-item">
 							<div class="image">
 							<span class="badge rounded-0">Exclusive</span>
-							<a href="<?php echo base_url(); ?>index.php/items/item1">
-									<img class="shop-item-image" src="<?php echo base_url("uploads/".$item->image) ?>" alt="Ariana Grande: thank u, next exclusive clear/pink lp"/>
+							<a href="<?php echo base_url(); ?>index.php/home/item/<?php echo $item->id; ?>">
+									<img class="shop-item-image" src="<?php echo $item->image ?>" alt="<?php echo $item->title;?>"/>
 									
 								</a>
 								<?php if($item->status=='sold'): ?>
@@ -179,8 +183,9 @@
 								</div>
 
 						</div>
-					
+						<?php } ?>
 					<?php } ?>
+					<?php $i++; ?>
 				<?php } ?>
 			<?php endif; ?>
 		</div>

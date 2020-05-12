@@ -104,6 +104,7 @@ $(document).ready(function() {
 	};
 
 	$('.cart-link').click(function () {
+		load_cart_data();
 		showCart();
 	})
 	$('.close').click(function () {
@@ -112,7 +113,7 @@ $(document).ready(function() {
 	})
 
 
-	load_cart_data();
+
 	function load_cart_data()
 	{
 		$.ajax({

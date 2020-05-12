@@ -61,47 +61,75 @@
 	<nav class="nav-bar">
 		<ul class="header-nav">
 			<li class="active"><a  href="<?php echo base_url(); ?>index.php/user/user_profile">Your details</a></li>
-			<li><a href="<?php echo base_url(); ?>index.php/user/delivery_address">Delivery address</a></li>
+			<li><a href="#">Delivery address</a></li>
 			<li><a href="#">Order history</a></li>
 		</ul>
 	</nav>
-<div class="back-to-shop">
-	<a href="<?php echo base_url(); ?>index.php/home/products"><< Back to shop</a>
-	<a href="<?php echo base_url(); ?>index.php/auth/logout">Log out</a>
-</div>
+	<div class="back-to-shop">
+		<a href="<?php echo base_url(); ?>index.php/home/products"><< Back to shop</a>
+		<a href="<?php echo base_url(); ?>index.php/auth/logout">Log out</a>
+	</div>
 
 	<div class="update-form">
-		<h3>Personal details</h3>
-		<?php  $message = $this->session->flashdata("message")?>
-		<?php echo $message; ?>
-		<?php echo form_open(); ?>
-		<?php $error =form_error("new_email", "<small class='text-danger'>", '</small>');?>
+		<h3>Delivery address</h3>
+		<?php  $d_message = $this->session->flashdata("d_message")?>
+		<?php echo $d_message; ?>
+		<?php echo form_open('user/delivery_address'); ?>
+
 		<table>
 			<tbody>
 			<tr>
 				<td>
-					<label for="email">Email address</label>
+					<label for="country">Country</label>
 				</td>
-				<?php $error =form_error("new_mail", "<small class='text-danger'>", '</small>');?>
-				<td> <input  name="new_email" id="email" type="text" value="<?php echo  $this->session->userdata('email'); ?>">
+				<?php $error =form_error("country", "<small class='text-danger'>", '</small>');?>
+				<td> <input  name="country" id="country" type="text" value="<?php echo  $this->session->userdata('country'); ?>"/>
 					<?php echo $error; ?>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<label for="name">Name</label>
+					<label for="city">City</label>
 				</td>
-				<?php $error =form_error("new_name", "<small class='text-danger'>", '</small>');?>
-				<td> <input  name="new_name" id="surname" type="text" value="<?php echo  $this->session->userdata('name'); ?>">
+				<?php $error =form_error("city", "<small class='text-danger'>", '</small>');?>
+				<td> <input  name="city" id="city" type="text" value="<?php echo  $this->session->userdata('city'); ?>"/>
 					<?php echo $error; ?>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<label for="name">Surname</label>
+					<label for="street">Street</label>
 				</td>
-				<?php $error =form_error("new_surname", "<small class='text-danger'>", '</small>');?>
-				<td> <input  name="new_surname" id="name" type="text" value="<?php echo  $this->session->userdata('surname'); ?>">
+				<?php $error =form_error("street", "<small class='text-danger'>", '</small>');?>
+				<td> <input  name="street" id="street" type="text" value="<?php echo  $this->session->userdata('street'); ?>"/>
+					<?php echo $error; ?>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label for="building">Building</label>
+				</td>
+				<?php $error =form_error("building", "<small class='text-danger'>", '</small>');?>
+				<td> <input  name="building" id="building" type="text" value="<?php echo  $this->session->userdata('building'); ?>"/>
+					<?php echo $error; ?>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label for="zip">ZIP</label>
+				</td>
+				<?php $error =form_error("zip", "<small class='text-danger'>", '</small>');?>
+				<td> <input  name="zip" id="zip" type="text" value="<?php echo  $this->session->userdata('zip'); ?>"/>
+					<?php echo $error; ?>
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					<label for="phone">Phone</label>
+				</td>
+				<?php $error =form_error("phone", "<small class='text-danger'>", '</small>');?>
+				<td> <input  name="phone" id="phone" type="text" value="<?php echo  $this->session->userdata('phone'); ?>"/>
 					<?php echo $error; ?>
 				</td>
 			</tr>
@@ -109,52 +137,11 @@
 			</tbody>
 		</table>
 	</div>
-		<div class="update-button">
-			<button class="button " type="submit" name="update">Update</button>
-		</div>
-
-
-		</form>
-
-	<div class="password-update">
-		<h3>Update password</h3>
-
-
-		<?php  $pass_message = $this->session->flashdata("pass_message")?>
-		<div class="alert-m"> <?php echo $pass_message; ?> </div>
-
-		<?php echo form_open(); ?>
-			<?php $error =form_error("update_password", "<p class='text-danger'>", '</p>');?>
-		<table>
-			<tbody>
-			<tr>
-				<td>
-					<label for="update_password">New Password</label>
-				</td>
-				<td><input class="password-control" type="password" name="update_password"/>
-					<?php echo $error?>
-				</td>
-			</tr>
-
-			<?php $error =form_error("update_password2", "<p class='text-danger'>", '</p>');?>
-			<tr>
-				<td><label for="new_password2">Confirm password</label> </td>
-				<td> <input class="password-control" type="password" name="update_password2"/>
-					<?php echo $error?>
-				</td>
-			</tr>
-
-			</tbody>
-		</table>
-			<input class="button" type="submit" value="update" name="update-password"/>
-		</form>
-
-
-
-
+	<div class="update-button">
+		<button class="button " type="submit" >Update</button>
 	</div>
 
-
+</form>
 
 
 

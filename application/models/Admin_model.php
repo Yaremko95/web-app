@@ -118,7 +118,7 @@ class Admin_model extends CI_Model
 		$output = '';
 		if($data->num_rows() > 0)
 		{
-			foreach($data->result_array() as $row)
+			foreach(array_reverse($data->result_array()) as $row)
 			{
 				$output .= '<div class="shop-item">
 			<div class="image">
@@ -170,6 +170,20 @@ class Admin_model extends CI_Model
 			$output = '<h3>No Data Found</h3>';
 		}
 		return $output;
+	}
+
+	public function get_product_by_genre($prod_id) {
+		$this->db->select('genre');
+		$this->db->from('product');
+		$this->db->where('id', $prod_id);
+		$query = $this->db->get();
+		$genre = $query->row();
+
+		$this->db->select('*');
+		$this->db->from('product');
+		$this->db->where('genre', $genre->genre);
+		$row = $this->db->get();
+		return $row->result();
 	}
 
 

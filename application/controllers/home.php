@@ -85,10 +85,10 @@ class Home extends CI_Controller {
 	public function item($item_id) {
 		$this->load->model('Admin_model', 'admin');
 		$data=$this->admin->get_product($item_id);
-
+		$get_by_genre=$this->admin->get_product_by_genre($item_id);
 
 		$this->load->view('templates/header');
-		$this->load->view('item', array('data'=>$data));
+		$this->load->view('item', array('data'=>$data, 'get_by_genre'=>$get_by_genre));
 		$this->load->view('templates/footer');
 
 	}

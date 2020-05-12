@@ -181,21 +181,21 @@
 							<tr>
 								<td>
 									<label>
-										<input type="radio" checked="checked">Email you about the latest news
+										<input type="checkbox" class="mr-2" >Email you about the latest news
 									</label>
 								</td>
 							</tr>
 							<tr>
 								<td>
 									<label>
-										<input type="radio" >Email you about discounts and promotions
+										<input type="checkbox" class="mr-2" >Email you about discounts and promotions
 									</label>
 								</td>
 							</tr>
 							<tr>
 								<td>
 									<label>
-										<input type="radio" >Only Email you regarding your orders
+										<input type="checkbox" class="mr-2" >Only Email you regarding your orders
 									</label>
 								</td>
 							</tr>

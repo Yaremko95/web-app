@@ -37,6 +37,7 @@
 	$allowOnly['1']['admin']['delete_item']=true;
 
 	$allowOnly['2']['user']['user_profile']=true;
+	$allowOnly['2']['user']['delivery_address']=true;
 	$allowOnly['2']['cart']['user_cart']=true;
 
 
