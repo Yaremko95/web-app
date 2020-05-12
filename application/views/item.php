@@ -66,7 +66,7 @@
 		<div class="container-fluid item-container mb-2" style="margin-top: 145px; max-width:1405px">
 			<div class="row  row-cols-1 row-cols-md-2 ">
 				<div class="col d-flex justify-content-center ">
-					<a href=""> <img class="img-thumbnail" style="border:3px solid  #AE860D" src="https://dvfnvgxhycwzf.cloudfront.net/media/SharedImage/image600/.fQ74yF0W/SharedImage-94323.jpg?t=6c8ee880a9a1745d7770"/></a>
+					<a href=""> <img class="img-thumbnail" style="border:3px solid  #AE860D" src=""/><?php echo $data->image;?></a>
 
 				</div>
 				<div class="col pt-md-5">
