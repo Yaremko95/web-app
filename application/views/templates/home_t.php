@@ -126,9 +126,9 @@
 								</div>
 
 						</div>
-
+							<?php $i++; ?>
 						<?php } ?>
-						<?php $i++; ?>
+
 					<?php } ?>
 				<?php } ?>
 			<?php endif; ?>
@@ -183,9 +183,11 @@
 								</div>
 
 						</div>
+							<?php $i++; ?>
 						<?php } ?>
+
 					<?php } ?>
-					<?php $i++; ?>
+
 				<?php } ?>
 			<?php endif; ?>
 		</div>

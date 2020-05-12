@@ -103,8 +103,6 @@
 						<?php $i=0; ?>
 						<?php foreach (array_reverse($get_by_genre) as $item) { ?>
 							<?php if($i<4 && $item->id != $data->id) { ?>
-								<?php if($item->feature=='exclusive') { ?>
-
 									<div class="pair-col col d-flex flex-column justify-content-center align-items-center mb-5">
 										<a href="<?php echo base_url(); ?>index.php/home/item/<?php echo $item->id; ?>">
 											<img class="img-thumbnail" style="max-height: 20rem" src="<?php echo $item->image; ?>"/></a>
@@ -114,9 +112,9 @@
 									</div>
 
 
-								<?php } ?>
+								<?php $i++; ?>
 							<?php } ?>
-							<?php $i++; ?>
+
 						<?php } ?>
 					<?php endif; ?>
 
